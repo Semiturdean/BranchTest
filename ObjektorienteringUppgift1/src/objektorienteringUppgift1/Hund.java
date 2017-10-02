@@ -24,8 +24,6 @@ public class Hund extends Uppgift1 {
 		return hundfoder;
 	}
 	@Override
-	public void getAnimal() {
-		
-		
+	public void getAnimal() {	
 	}
 }
