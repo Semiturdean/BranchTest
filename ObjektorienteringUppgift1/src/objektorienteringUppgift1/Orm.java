@@ -2,8 +2,8 @@ package objektorienteringUppgift1;
 
 public class Orm extends Uppgift1 implements IFood, IPrintMe {
 	protected int ormpellets;
-	public Orm(int vikt, String djur, int ormpellets) {
-		super(vikt,djur);
+	public Orm(int vikt, String djurmat, String namn) {
+		super(vikt,djurmat,namn);
 	}
 	@Override
 	public int foodcalculator() {

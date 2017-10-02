@@ -4,9 +4,8 @@ import javax.swing.JOptionPane;
 
 public class Hund extends Uppgift1 {
 	protected int hundfoder;
-	public Hund(int vikt, String djur, int hundfoder) {
-		super(vikt,djur);
-		this.hundfoder = hundfoder;
+	public Hund(int vikt, String djurmat, String namn) {
+		super(vikt,djurmat, namn);
 	}
 	@Override
 	public void getName() {

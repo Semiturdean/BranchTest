@@ -2,8 +2,8 @@ package objektorienteringUppgift1;
 
 public class Katt extends Uppgift1 implements IFood, IPrintMe {
 	protected int kattfoder;
-	public Katt(int vikt, String djur, int kattfoder) {
-		super(vikt,djur);
+	public Katt(int vikt, String djurmat, String namn) {
+		super(vikt,djurmat, namn);
 	}
 	@Override
 	public void getName() {
