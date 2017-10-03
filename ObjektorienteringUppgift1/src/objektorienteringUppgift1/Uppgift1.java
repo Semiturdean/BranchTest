@@ -7,7 +7,7 @@ abstract class Uppgift1 implements IFood {
 	protected String djurmat;
 	protected String namn;
 	
-	public Uppgift1(int vikt, String djurmat, String namn) {
+	public Uppgift1(int vikt, String djurmat, String namn) { //superklass konstruktor
 		this.vikt = vikt;
 		this.djurmat = djurmat;
 		this.namn = namn;
