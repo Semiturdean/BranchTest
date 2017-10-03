@@ -5,15 +5,40 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class HealthyPets {
-	public String s1;
-	public void printFoods(IFood s) {
-		s1 = JOptionPane.showInputDialog(null, "Ange namn på djuret som skall matas!");
+	
+	private String s1;
+	public boolean aktuell(String s1, List<IFood> food) {
+
+		for(IFood s : food)
+			if (s1.equalsIgnoreCase(s.getName())) {
+				return true;
+			}
+		return false;
+		
 	}
+	
 	public HealthyPets() {
 		DjurfoderDemo pets = new DjurfoderDemo();
 		List<IFood> food = pets.getAllFoods();
-		for (IFood s : food) {
-			printFoods(s);
+		while (true) {
+		s1 = JOptionPane.showInputDialog(null, "Vilket djur skall få mat?");
+		if (s1 == null) {
+			JOptionPane.showMessageDialog(null, "Du angav inget namn");
+			System.exit(0);
+		}
+		else if (s1 == "") {
+			JOptionPane.showMessageDialog(null, "Du angav ett tomt fält");
+		}
+		else if (aktuell(s1, food)) {
+		for(IFood s : food) {
+			if (s1.equalsIgnoreCase(s.getName())) {
+				s.Foder();
+			}
+		}
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Du angav ett oregistrerat namn");
+		}
 		}
 	}
 	public static void main(String[] arg) {
