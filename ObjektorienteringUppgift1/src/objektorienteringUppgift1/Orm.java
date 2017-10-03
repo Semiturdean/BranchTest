@@ -1,32 +1,16 @@
 package objektorienteringUppgift1;
 
-public class Orm extends Uppgift1 implements IFood, IPrintMe {
+import javax.swing.JOptionPane;
+
+public class Orm extends Uppgift1 {
 	protected int ormpellets;
 	public Orm(int vikt, String djurmat, String namn) {
 		super(vikt,djurmat,namn);
 	}
 	@Override
-	public int foodcalculator() {
+	public void Foder() {
 		ormpellets = 20;
-		return ormpellets;
+		JOptionPane.showMessageDialog(null, this.namn + " ska ha " + ormpellets + " gram " + this.djurmat);
 	}
-
-	@Override
-	public void getAnimal() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void getName() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void printMe() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }

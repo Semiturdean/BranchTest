@@ -1,32 +1,16 @@
 package objektorienteringUppgift1;
 
-public class Katt extends Uppgift1 implements IFood, IPrintMe {
-	protected int kattfoder;
+import javax.swing.JOptionPane;
+
+public class Katt extends Uppgift1 {
+	protected double kattfoder;
 	public Katt(int vikt, String djurmat, String namn) {
 		super(vikt,djurmat, namn);
 	}
 	@Override
-	public void getName() {
-		// TODO Auto-generated method stub
+	public void Foder() {
+	kattfoder = this.vikt / 150; 
+	JOptionPane.showMessageDialog(null, this.namn + " ska ha " + kattfoder + " gram " +  this.djurmat);
 		
 	}
-
-	@Override
-	public void printMe() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int foodcalculator() {
-		kattfoder = getVikt() / 100;
-		return kattfoder;
-	}
-
-	@Override
-	public void getAnimal() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
