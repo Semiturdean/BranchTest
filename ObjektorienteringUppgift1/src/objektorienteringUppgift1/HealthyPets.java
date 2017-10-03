@@ -29,7 +29,8 @@ public class HealthyPets {
 		else if (aktuell(s1, food)) {
 		for(IFood s : food) {
 			if (s1.equalsIgnoreCase(s.getName())) {
-				s.Foder(); // Det är här polymorfismen sker, trots att en metod som definierats i flera klasser kallas, så får vi rätt objekt.
+				s.Foder(); /* Det är här polymorfismen sker, trots att en metod som definierats i flera klasser kallas, så får vi rätt objekt.
+		Dessutom använder vi oss av dynamisk bindning för att leta igenom arvshierarkin. (metoden finns ej i superklassen).*/
 		}
 	}
 }
