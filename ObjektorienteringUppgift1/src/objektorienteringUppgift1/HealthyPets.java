@@ -12,10 +12,10 @@ public class HealthyPets {
 		for(IFood s : food)
 			if (s1.equalsIgnoreCase(s.getName())) {
 				return true;
-			}
+	}
 		return false;
 		
-	}
+}
 	
 	public HealthyPets() {
 		DjurfoderDemo pets = new DjurfoderDemo();
@@ -25,19 +25,19 @@ public class HealthyPets {
 		if (s1 == null) {
 			JOptionPane.showMessageDialog(null, "Du angav inget namn");
 			System.exit(0);
-		}
+	}
 		else if (aktuell(s1, food)) {
 		for(IFood s : food) {
 			if (s1.equalsIgnoreCase(s.getName())) {
 				s.Foder(); // Det är här polymorfismen sker, trots att en metod som definierats i flera klasser kallas, så får vi rätt objekt.
-			}
 		}
-		}
+	}
+}
 		else {
 			JOptionPane.showMessageDialog(null, "Du angav ett oregistrerat namn");
 		}
-		}
 	}
+}
 	public static void main(String[] arg) {
 		HealthyPets printer = new HealthyPets();
 	}

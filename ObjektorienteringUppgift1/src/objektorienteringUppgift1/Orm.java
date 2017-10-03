@@ -2,7 +2,7 @@ package objektorienteringUppgift1;
 
 import javax.swing.JOptionPane;
 
-public class Orm extends Uppgift1 {
+public class Orm extends Uppgift1 implements IFood {
 	protected int ormpellets;
 	public Orm(int vikt, String djurmat, String namn) {
 		super(vikt,djurmat,namn);

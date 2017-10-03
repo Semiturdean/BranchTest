@@ -1,7 +1,7 @@
 package objektorienteringUppgift1;
 
 
-abstract class Uppgift1 implements IFood {
+abstract class Uppgift1 {
 	Uppgift1(){}
 	protected int vikt;
 	protected String djurmat;

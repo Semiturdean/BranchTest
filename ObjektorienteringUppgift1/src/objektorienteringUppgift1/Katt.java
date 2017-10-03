@@ -2,7 +2,7 @@ package objektorienteringUppgift1;
 
 import javax.swing.JOptionPane;
 
-public class Katt extends Uppgift1 {
+public class Katt extends Uppgift1 implements IFood {
 	protected double kattfoder;
 	public Katt(int vikt, String djurmat, String namn) {
 		super(vikt,djurmat, namn);
