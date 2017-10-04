@@ -7,6 +7,7 @@ public class Orm extends Uppgift1 implements IFood {
 	public Orm(int vikt, String djurmat, String namn) {
 		super(vikt,djurmat,namn);
 	}
+	
 	@Override
 	public void Foder() {
 		ormpellets = 20;

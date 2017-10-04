@@ -7,6 +7,7 @@ public class Katt extends Uppgift1 implements IFood {
 	public Katt(int vikt, String djurmat, String namn) {
 		super(vikt,djurmat, namn);
 	}
+	
 	@Override
 	public void Foder() {
 	kattfoder = this.vikt / 150; 

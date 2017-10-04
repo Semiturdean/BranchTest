@@ -20,4 +20,4 @@ public class DjurfoderDemo {
     	
     	return allFoods;
 	}
-	}
+}

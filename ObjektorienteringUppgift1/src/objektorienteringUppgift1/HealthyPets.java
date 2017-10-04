@@ -20,16 +20,16 @@ public class HealthyPets {
 	public HealthyPets() {
 		DjurfoderDemo pets = new DjurfoderDemo();
 		List<IFood> food = pets.getAllFoods();
-		while (true) {
-		s1 = JOptionPane.showInputDialog(null, "Vilket djur skall få mat?");
-		if (s1 == null) {
-			JOptionPane.showMessageDialog(null, "Du angav inget namn");
+			while (true) {
+				s1 = JOptionPane.showInputDialog(null, "Vilket djur skall få mat?");
+				if (s1 == null) {
+				JOptionPane.showMessageDialog(null, "Du angav inget namn");
 			System.exit(0);
 	}
 		else if (aktuell(s1, food)) {
-		for(IFood s : food) {
-			if (s1.equalsIgnoreCase(s.getName())) {
-				s.Foder(); /* Det är här polymorfismen sker, trots att en metod som definierats i flera klasser kallas, så får vi rätt objekt.
+			for(IFood s : food) {
+				if (s1.equalsIgnoreCase(s.getName())) {
+					s.Foder(); /* Det är här polymorfismen sker, trots att en metod som definierats i flera klasser kallas, så får vi rätt objekt.
 		Dessutom använder vi oss av dynamisk bindning för att leta igenom arvshierarkin. (metoden finns ej i superklassen).*/
 		}
 	}
