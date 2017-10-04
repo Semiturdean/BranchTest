@@ -22,9 +22,9 @@ public class HealthyPets {
 		List<IFood> food = pets.getAllFoods();
 			while (true) {
 				s1 = JOptionPane.showInputDialog(null, "Vilket djur skall få mat?");
-				if (s1 == null) {
-				JOptionPane.showMessageDialog(null, "Du angav inget namn");
-			System.exit(0);
+					if (s1 == null) {
+						JOptionPane.showMessageDialog(null, "Du angav inget namn");
+						System.exit(0);
 	}
 		else if (aktuell(s1, food)) {
 			for(IFood s : food) {
