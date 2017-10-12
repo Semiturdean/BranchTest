@@ -26,11 +26,11 @@ public class BestGymEver {
 		
 		while(readFile.hasNext()) {
 			firstLine = readFile.nextLine();
-			//System.out.println(firstLine);
+			
 		if (readFile.hasNext()) {
 			secondLine = readFile.nextLine();
 			customers = secondLine.split(",");
-			//System.out.println(customers[0]);
+			
 		}
 		}
 		
