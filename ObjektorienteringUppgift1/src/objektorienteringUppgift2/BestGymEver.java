@@ -15,16 +15,23 @@ public class BestGymEver {
 	public BestGymEver() {
 		String PathToClients = "src\\objektorienteringUppgift2\\customers.txt";
 		Path infilsPath = Paths.get(PathToClients);
-		Path utfilsPath = Paths.get("src\\objektorienteringUppgift2\\members.txt");
+		Path utfilsPathToCustomers = Paths.get("src\\objektorienteringUppgift2\\members.txt");
+		Path utfilsPathToActiveMembers = Paths.get("src\\objektorienteringUppgift2\\recentActivity.txt");
 		String[] customers;
 		String firstLine;
+		String secondLine;
 		
-		try (PrintWriter print = new PrintWriter(Files.newBufferedWriter(utfilsPath))){
+		try (PrintWriter print = new PrintWriter(Files.newBufferedWriter(utfilsPathToCustomers))){
 		Scanner readFile = new Scanner(infilsPath);
 		
 		while(readFile.hasNext()) {
 			firstLine = readFile.nextLine();
-			System.out.println(firstLine);
+			//System.out.println(firstLine);
+		if (readFile.hasNext()) {
+			secondLine = readFile.nextLine();
+			customers = secondLine.split(",");
+			//System.out.println(customers[0]);
+		}
 		}
 		
 		}catch(FileNotFoundException e) {
