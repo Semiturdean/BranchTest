@@ -48,9 +48,9 @@ public class BestGymEver {
 			System.exit(0);
 			
 		}catch(IOException e) {
-		System.out.println("Det gick inte att skriva till fil");
-		System.out.flush();
-		System.exit(0);
+			System.out.println("Det gick inte att skriva till fil");
+			System.out.flush();
+			System.exit(0);
 		
 		}catch(Exception e) {
 			System.out.println("Något gick fel");
