@@ -4,11 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import junit.framework.TestCase;
+
 public class BestGymEverTest {
 
+	BestGymEver p = new BestGymEver();
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public final void BestGymEverTest() {
+		
 	}
 
 }

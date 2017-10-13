@@ -3,11 +3,13 @@ package objektorienteringUppgift2;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+import javax.swing.text.DateFormatter;
 
 public class BestGymEver {
 	
@@ -20,6 +22,10 @@ public class BestGymEver {
 		String[] customers;
 		String firstLine;
 		String secondLine;
+		LocalDate date = LocalDate.now();
+		LocalDate today = LocalDate.now();
+		date = date.minusYears(1);
+		System.out.println(date);
 		
 		try (PrintWriter print = new PrintWriter(Files.newBufferedWriter(utfilsPathToCustomers))){
 		Scanner readFile = new Scanner(infilsPath);
@@ -27,13 +33,14 @@ public class BestGymEver {
 		while(readFile.hasNext()) {
 			firstLine = readFile.nextLine();
 			
-		if (readFile.hasNext()) {
+		if (readFile.hasNext()); {
 			secondLine = readFile.nextLine();
-			customers = secondLine.split(",");
-			
-		}
-		}
+			customers = secondLine.split("0");
 		
+			print.println(secondLine);
+		}
+		}
+			
 		}catch(FileNotFoundException e) {
 			System.out.println("Filen hittades ej");
 			System.out.flush();
