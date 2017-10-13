@@ -36,7 +36,7 @@ public class BestGymEver {
 			
 		if(Integer.parseInt(secondLine) >= Integer.parseInt(aYearAgo)) {
 		
-			print.println(firstLine + "\n" + secondLine);
+			print.println(firstLine + "\n" + secondLine + "\n");
 		}
 		}
 		}
