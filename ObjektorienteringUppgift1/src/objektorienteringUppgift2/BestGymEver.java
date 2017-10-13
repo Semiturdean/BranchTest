@@ -7,37 +7,37 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Scanner;
-import javax.swing.text.DateFormatter;
+
 
 public class BestGymEver {
 	
 	
 	public BestGymEver() {
+		
 		String PathToClients = "src\\objektorienteringUppgift2\\customers.txt";
 		Path infilsPath = Paths.get(PathToClients);
-		Path utfilsPathToCustomers = Paths.get("src\\objektorienteringUppgift2\\members.txt");
-		Path utfilsPathToActiveMembers = Paths.get("src\\objektorienteringUppgift2\\recentActivity.txt");
-		String[] customers;
+		Path utfilsPathToPayingCustomers = Paths.get("src\\objektorienteringUppgift2\\MembersWithActiveMembership.txt");
+		Path utfilsPathToActiveMembers = Paths.get("src\\objektorienteringUppgift2\\MembersWithRecentActivity.txt");
 		String firstLine;
 		String secondLine;
 		LocalDate date = LocalDate.now();
-		LocalDate today = LocalDate.now();
-		date = date.minusYears(1);
-		System.out.println(date);
+		String aYearAgo = date.minusYears(1).toString().replaceAll("-", "");
 		
-		try (PrintWriter print = new PrintWriter(Files.newBufferedWriter(utfilsPathToCustomers))){
+		
+		try (PrintWriter print = new PrintWriter(Files.newBufferedWriter(utfilsPathToPayingCustomers))){
 		Scanner readFile = new Scanner(infilsPath);
 		
 		while(readFile.hasNext()) {
 			firstLine = readFile.nextLine();
 			
 		if (readFile.hasNext()); {
-			secondLine = readFile.nextLine();
-			customers = secondLine.split("0");
-		
-			print.println(secondLine);
+			secondLine = readFile.nextLine().replaceAll("-", "");
+			
+		if(Integer.parseInt(secondLine) >= Integer.parseInt(aYearAgo)) {
+			print.println(firstLine + "\n" + secondLine);
+		}
 		}
 		}
 			
