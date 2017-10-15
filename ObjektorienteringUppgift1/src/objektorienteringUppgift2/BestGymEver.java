@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 
 public class BestGymEver {
 	
@@ -23,6 +25,7 @@ public class BestGymEver {
 		String secondLine;
 		LocalDate date = LocalDate.now();
 		String aYearAgo = date.minusYears(1).toString().replaceAll("-", "");
+		String input = JOptionPane.showInputDialog("Ange namn eller personnummer på kunden!");
 		
 		
 		try (PrintWriter print = new PrintWriter(Files.newBufferedWriter(utfilsPathToPayingCustomers))){
@@ -33,7 +36,7 @@ public class BestGymEver {
 			
 		if (readFile.hasNext()); {
 			secondLine = readFile.nextLine().replaceAll("-", "");
-			
+		
 		if(Integer.parseInt(secondLine) >= Integer.parseInt(aYearAgo)) {
 		
 			print.println(firstLine + "\n" + secondLine);
