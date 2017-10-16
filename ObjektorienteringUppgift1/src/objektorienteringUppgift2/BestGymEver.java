@@ -38,9 +38,9 @@ public class BestGymEver {
 			secondLine = readFile.nextLine();
 		
 		if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
-			print.format(firstLine + "\n" + secondLine + "\n");
-		if(firstLine.contains(input)) {
-			System.out.println(firstLine + "\nMedlem med aktiv medlemskap\n");
+			if(firstLine.contains(input)) {
+				System.out.println(firstLine + "\nMedlem med aktiv medlemskap\n");
+				print.format(firstLine + "\n" + secondLine + "\n");
 		}
 		
 		
