@@ -44,7 +44,7 @@ public class BestGymEver {
 		Scanner readActiveMemberFile = new Scanner(utfilsPathToPayingCustomers);
 		
 		if(readActiveMemberFile.hasNext() && input.equalsIgnoreCase(firstLine.indexOf(str))){
-			readActiveMemberFile.next(); // ändring
+			readActiveMemberFile.next(); // ändring 
 		}
 		}
 		}
