@@ -25,7 +25,6 @@ public class BestGymEver {
 		LocalDate date = LocalDate.now();
 		String aYearAgo = date.minusYears(1).toString();
 		String input = JOptionPane.showInputDialog("Ange namn eller personnummer på kunden!");
-		//Boolean customerCheck = false;
 		
 		try (PrintWriter printRecentActivity = new PrintWriter(new BufferedWriter
 				(new FileWriter("src\\objektorienteringUppgift2\\MembersWithRecentActivity.txt", true)))){
@@ -56,9 +55,7 @@ public class BestGymEver {
 			break;
 		}
 	}
-		//if (customerCheck) {
-		//	System.out.println("Ej medlem!");
-		//}
+		
 		}catch(FileNotFoundException e) {
 			System.out.println("Filen hittades ej");
 			System.out.flush();
