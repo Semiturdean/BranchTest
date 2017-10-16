@@ -38,7 +38,7 @@ public class BestGymEver {
 		
 		if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
 			if(firstLine.contains(input)) {
-				System.out.println(firstLine + "\nMedlem med aktiv medlemskap\n");
+				
 				printRecentActivity.printf("%s" + "\nSenast aktiv: " + "%s", firstLine, date);
 	
 		}
