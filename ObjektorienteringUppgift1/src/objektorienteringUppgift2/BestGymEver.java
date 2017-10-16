@@ -20,13 +20,14 @@ public class BestGymEver {
 		
 		
 		Path infilsPath = Paths.get("src\\objektorienteringUppgift2\\customers.txt");
-		String firstLine;
+		String firstLine ="";
 		String secondLine;
 		LocalDate date = LocalDate.now();
 		String aYearAgo = date.minusYears(1).toString();
 		String input = JOptionPane.showInputDialog("Ange namn eller personnummer på kunden!");
 		
-		try (PrintWriter printRecentActivity = new PrintWriter(new BufferedWriter(new FileWriter("src\\objektorienteringUppgift2\\MembersWithRecentActivity.txt", true)))){
+		try (PrintWriter printRecentActivity = new PrintWriter(new BufferedWriter
+				(new FileWriter("src\\objektorienteringUppgift2\\MembersWithRecentActivity.txt", true)))){
 			Scanner readFile = new Scanner(infilsPath);
 		
 		while(readFile.hasNext()) {
@@ -34,17 +35,15 @@ public class BestGymEver {
 			
 		if (readFile.hasNext()); {
 			secondLine = readFile.nextLine();
-		
-		if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
-			if(firstLine.contains(input)) {
-				
-				printRecentActivity.printf("%s" + "\nSenast aktiv: " + "%s", firstLine, date);
+			
+			if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
+				if(firstLine.contains(input)) {
+					System.out.println(firstLine + "\nMedlem med aktivt medlemskap!");
+					printRecentActivity.printf("%s" + "\nSenast aktiv: " + "%s" + "\n", firstLine, date);
+				}
+			}
 		}
-		
-		
-		}
-		}
-		}
+	}
 		
 		}catch(FileNotFoundException e) {
 			System.out.println("Filen hittades ej");
