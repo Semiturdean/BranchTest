@@ -20,7 +20,6 @@ public class BestGymEver {
 		
 		
 		Path infilsPath = Paths.get("src\\objektorienteringUppgift2\\customers.txt");
-		//Path utfilsPathToPayingCustomers = Paths.get("src\\objektorienteringUppgift2\\MembersWithActiveMembership.txt");
 		String firstLine;
 		String secondLine;
 		LocalDate date = LocalDate.now();
