@@ -40,7 +40,6 @@ public class BestGymEver {
 			if(firstLine.contains(input)) {
 				
 				printRecentActivity.printf("%s" + "\nSenast aktiv: " + "%s", firstLine, date);
-	
 		}
 		
 		
