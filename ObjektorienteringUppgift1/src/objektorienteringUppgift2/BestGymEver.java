@@ -35,15 +35,14 @@ public class BestGymEver {
 			firstLine = readFile.nextLine();
 			
 		if (readFile.hasNext()); {
-			secondLine = readFile.nextLine().replaceAll("-", "");
+			secondLine = readFile.nextLine()
 		
-		if(Integer.parseInt(secondLine) >= Integer.parseInt(aYearAgo)) {
-		
+		if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo)) {
 			print.format(firstLine + "\n" + secondLine + "\n");
 		}
 		Scanner readActiveMemberFile = new Scanner(utfilsPathToPayingCustomers);
 		
-		if(readActiveMemberFile.hasNext()){
+		if(readActiveMemberFile.hasNext() &&){
 			readActiveMemberFile.next();
 		}
 		}
