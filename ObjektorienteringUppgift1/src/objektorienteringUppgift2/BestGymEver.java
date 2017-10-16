@@ -25,6 +25,7 @@ public class BestGymEver {
 		LocalDate date = LocalDate.now();
 		String aYearAgo = date.minusYears(1).toString();
 		String input = JOptionPane.showInputDialog("Ange namn eller personnummer på kunden!");
+		Boolean filled = false;
 		
 		try (PrintWriter printRecentActivity = new PrintWriter(new BufferedWriter
 				(new FileWriter("src\\objektorienteringUppgift2\\MembersWithRecentActivity.txt", true)))){
@@ -38,24 +39,22 @@ public class BestGymEver {
 			
 			if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
 				if(firstLine.contains(input)) {
+					filled = true;
 					System.out.println(firstLine + "\nMedlem med aktivt medlemskap!");
 					printRecentActivity.printf("%s" + "\nSenast aktiv: " + "%s" + "\n", firstLine, date);
-				System.exit(0);
 				}
 			}
 		}
-		if(Integer.parseInt(secondLine.replace("-", "")) < Integer.parseInt(aYearAgo.replace("-", ""))) {
+		if(Integer.parseInt(secondLine.replaceAll("-", "")) < Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
 			if(firstLine.contains(input)) {
 				System.out.println(firstLine + "\nMedlem utan aktivt medlemskap!");
-			System.exit(0);
+				filled = true;
 			}
 		}
-		else {
-			System.out.println("Ej Medlem!");
-			break;
-		}
 	}
-		
+		if (!filled) {
+			System.out.println(input + "\nEj medlem!");
+		}
 		}catch(FileNotFoundException e) {
 			System.out.println("Filen hittades ej");
 			System.out.flush();
@@ -72,6 +71,7 @@ public class BestGymEver {
 			System.exit(0);
 		}
 	}
+	
 	public static void main(String[] arg){
 		BestGymEver customer = new BestGymEver();
 	}

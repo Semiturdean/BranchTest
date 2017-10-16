@@ -11,7 +11,7 @@ public class BestGymEverTest {
 	BestGymEver p = new BestGymEver();
 	@Test
 	public final void BestGymEverTest() {
-		TestCase.assertTrue(null, false);
+		TestCase.assertNotNull("", p);
 	}
 
 }
