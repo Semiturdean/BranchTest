@@ -17,20 +17,19 @@ public class BestGymEver {
 	
 	public BestGymEver() {
 		
-		String PathToClients = "src\\objektorienteringUppgift2\\customers.txt";
-		Path infilsPath = Paths.get(PathToClients);
+		
+		Path infilsPath = Paths.get("src\\objektorienteringUppgift2\\customers.txt");
 		Path utfilsPathToPayingCustomers = Paths.get("src\\objektorienteringUppgift2\\MembersWithActiveMembership.txt");
 		Path utfilsPathToActiveMembers = Paths.get("src\\objektorienteringUppgift2\\MembersWithRecentActivity.txt");
 		String firstLine;
 		String secondLine;
 		LocalDate date = LocalDate.now();
-		String aYearAgo = date.minusYears(1).toString().replaceAll("-", "");
+		String aYearAgo = date.minusYears(1).toString();
 		String input = JOptionPane.showInputDialog("Ange namn eller personnummer på kunden!");
 		
 		
 		try (PrintWriter print = new PrintWriter(Files.newBufferedWriter(utfilsPathToPayingCustomers))){
 		Scanner readFile = new Scanner(infilsPath);
-		Scanner readActiveMemberFile = new Scanner(utfilsPathToPayingCustomers);
 		
 		while(readFile.hasNext()) {
 			firstLine = readFile.nextLine();
@@ -38,14 +37,17 @@ public class BestGymEver {
 		if (readFile.hasNext()); {
 			secondLine = readFile.nextLine();
 		
-		if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo)) {
+		if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
 			print.format(firstLine + "\n" + secondLine + "\n");
+		if(firstLine.contains(input)) {
+			System.out.println(firstLine + "\nMedlem med aktiv medlemskap\n");
+		}
 		
 		
 		}
 		}
 		}
-			
+		
 		}catch(FileNotFoundException e) {
 			System.out.println("Filen hittades ej");
 			System.out.flush();
