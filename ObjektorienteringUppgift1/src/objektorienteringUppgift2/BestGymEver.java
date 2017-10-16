@@ -41,15 +41,19 @@ public class BestGymEver {
 				if(firstLine.contains(input)) {
 					System.out.println(firstLine + "\nMedlem med aktivt medlemskap!");
 					printRecentActivity.printf("%s" + "\nSenast aktiv: " + "%s" + "\n", firstLine, date);
-				
+				break;
 				}
 			}
 		}
 		if(Integer.parseInt(secondLine.replace("-", "")) < Integer.parseInt(aYearAgo.replace("-", ""))) {
 			if(firstLine.contains(input)) {
 				System.out.println(firstLine + "\nMedlem utan aktivt medlemskap!");
-			
+			break;
 			}
+		}
+		else {
+			System.out.println("Ej Medlem!");
+			break;
 		}
 	}
 		//if (customerCheck) {
