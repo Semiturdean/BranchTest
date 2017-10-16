@@ -30,6 +30,7 @@ public class BestGymEver {
 		
 		try (PrintWriter print = new PrintWriter(Files.newBufferedWriter(utfilsPathToPayingCustomers))){
 		Scanner readFile = new Scanner(infilsPath);
+		Scanner readActiveMemberFile = new Scanner(utfilsPathToPayingCustomers);
 		
 		while(readFile.hasNext()) {
 			firstLine = readFile.nextLine();
@@ -39,11 +40,8 @@ public class BestGymEver {
 		
 		if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo)) {
 			print.format(firstLine + "\n" + secondLine + "\n");
-		}
-		Scanner readActiveMemberFile = new Scanner(utfilsPathToPayingCustomers);
 		
-		if(readActiveMemberFile.hasNext()){
-			readActiveMemberFile.next();
+		
 		}
 		}
 		}
