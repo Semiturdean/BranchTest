@@ -41,6 +41,11 @@ public class BestGymEver {
 		
 			print.format(firstLine + "\n" + secondLine + "\n");
 		}
+		Scanner readActiveMemberFile = new Scanner(utfilsPathToPayingCustomers);
+		
+		if(readActiveMemberFile.hasNext() && input.equalsIgnoreCase(firstLine.indexOf(str))){
+			readActiveMemberFile.next(); // ändring
+		}
 		}
 		}
 			
