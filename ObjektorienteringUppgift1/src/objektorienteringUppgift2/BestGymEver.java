@@ -66,6 +66,8 @@ public class BestGymEver {
 		}
 	}
 		
+		readFile.close();
+		
 		if(!filled) {
 			System.out.println(input + "\nEj medlem!");
 		}
