@@ -38,7 +38,8 @@ public class BestGymEver {
 
 			if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
 				if (input.equals(person[0]) || input.equalsIgnoreCase(person[1].trim())) {
-					if(input.matches("[0-9]{10}") || input.matches("[a-öA-Ö]*") || input.matches("[a-öA-Ö]*\\s*[a-öA-Ö]*")) {
+					if(input.matches("[0-9]{10}") || input.matches("[a-öA-Ö]*") || input.matches("[a-öA-Ö]*\\s*[a-öA-Ö]*")) { /*
+					Input ska matcha en 10-siffrig kombo, eller ett för -och efternamn*/
 						
 						filled = true;
 						System.out.println(person[0] +", " + person[1] + "\nMedlem med aktivt medlemskap!");
