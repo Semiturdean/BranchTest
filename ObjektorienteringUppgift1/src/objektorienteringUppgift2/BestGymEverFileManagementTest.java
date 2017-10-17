@@ -16,6 +16,7 @@ public class BestGymEverFileManagementTest {
 		TestCase.assertTrue(customer.input = "Greger Ganache", customer.filled = true);
 		TestCase.assertFalse(customer.input = "Semi Turdean", customer.filled = false);
 		TestCase.assertTrue(customer.input = "1111111111", customer.filled = true);
+		TestCase.assertFalse(customer.input = "0", customer.filled = false);
 	}
 
 }
