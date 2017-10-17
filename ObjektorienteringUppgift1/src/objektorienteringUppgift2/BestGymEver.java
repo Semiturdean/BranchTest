@@ -24,7 +24,7 @@ public class BestGymEver {
 		String secondLine;
 		LocalDate date = LocalDate.now();
 		String aYearAgo = date.minusYears(1).toString();
-		String input = JOptionPane.showInputDialog("Ange namn eller personnummer på kunden!");
+		String input = JOptionPane.showInputDialog("Ange namn eller personnummer på kunden!").trim();
 		Boolean filled = false;
 		
 		try (PrintWriter printRecentActivity = new PrintWriter(new BufferedWriter
@@ -38,7 +38,7 @@ public class BestGymEver {
 			secondLine = readFile.nextLine();
 			
 			if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
-				if(firstLine.contains(input)) {
+				if(input.matches("[0-9]{10}") || input.matches("[a-öA-Ö]*") || input.matches("*\\s*[a-öA-Ö]*")) {
 					filled = true;
 					System.out.println(firstLine + "\nMedlem med aktivt medlemskap!");
 					printRecentActivity.printf("%s" + "\nSenast aktiv: " + "%s" + "\n", firstLine, date);
@@ -46,7 +46,7 @@ public class BestGymEver {
 			}
 		}
 		if(Integer.parseInt(secondLine.replaceAll("-", "")) < Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
-			if(firstLine.contains(input)) {
+			if(input.matches("[0-9]{10}") || input.matches("[a-öA-Ö]*") || input.matches("*\\s*[a-öA-Ö]*")) {
 				System.out.println(firstLine + "\nMedlem utan aktivt medlemskap!");
 				filled = true;
 			}
