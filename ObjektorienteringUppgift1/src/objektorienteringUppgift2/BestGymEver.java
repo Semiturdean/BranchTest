@@ -9,7 +9,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 
@@ -76,6 +75,10 @@ public class BestGymEver {
 			System.out.flush();
 			System.exit(0);
 		}
+	}
+		
+	public void ExceptionCatcher() {
+		
 	}
 	
 	public static void main(String[] arg){
