@@ -75,12 +75,9 @@ public class BestGymEver {
 			System.out.println("Något gick fel");
 			System.out.flush();
 			System.exit(0);
-		}
 	}
-		
-	public void ExceptionCatcher() {
-		
-	}
+}
+
 	
 	public static void main(String[] arg){
 		BestGymEver customer = new BestGymEver();
