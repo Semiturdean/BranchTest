@@ -20,7 +20,7 @@ public class BestGymEver {
 		
 		
 		Path infilsPath = Paths.get("src\\objektorienteringUppgift2\\customers.txt");
-		String firstLine ="";
+		String firstLine;
 		String secondLine;
 		LocalDate date = LocalDate.now();
 		String aYearAgo = date.minusYears(1).toString();
