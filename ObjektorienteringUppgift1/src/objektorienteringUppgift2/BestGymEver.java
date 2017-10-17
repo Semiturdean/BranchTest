@@ -20,35 +20,41 @@ public class BestGymEver {
 		
 		
 		Path infilsPath = Paths.get("src\\objektorienteringUppgift2\\customers.txt");
-		String firstLine;
 		String secondLine;
 		LocalDate date = LocalDate.now();
 		String aYearAgo = date.minusYears(1).toString();
-		String input = JOptionPane.showInputDialog("Ange namn eller personnummer på kunden!").trim();
+		String input = JOptionPane.showInputDialog("Ange för -och efternamn eller personnummer på kunden!");
 		Boolean filled = false;
+		String[] person;
 		
 		try (PrintWriter printRecentActivity = new PrintWriter(new BufferedWriter
 				(new FileWriter("src\\objektorienteringUppgift2\\MembersWithRecentActivity.txt", true)))){
-			Scanner readFile = new Scanner(infilsPath);
+				Scanner readFile = new Scanner(infilsPath);
 		
 		while(readFile.hasNext()) {
-			firstLine = readFile.nextLine();
-			
+			person = readFile.nextLine().split(",");
+	
 		if (readFile.hasNext()); {
 			secondLine = readFile.nextLine();
-			
+
 			if(Integer.parseInt(secondLine.replaceAll("-", "")) >= Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
-				if(input.matches("[0-9]{10}") || input.matches("[a-öA-Ö]*") || input.matches("*\\s*[a-öA-Ö]*")) {
-					filled = true;
-					System.out.println(firstLine + "\nMedlem med aktivt medlemskap!");
-					printRecentActivity.printf("%s" + "\nSenast aktiv: " + "%s" + "\n", firstLine, date);
+				if (input.equals(person[0]) || input.equalsIgnoreCase(person[1].trim())) {
+					if(input.matches("[0-9]{10}") || input.matches("[a-öA-Ö]*") || input.matches("[a-öA-Ö]*\\s*[a-öA-Ö]*")) {
+						
+						filled = true;
+						System.out.println(person[0] +", " + person[1] + "\nMedlem med aktivt medlemskap!");
+						printRecentActivity.printf("%s" + ",%s" + "\nSenast aktiv: " + "%s" + "\n", person[0],person[1], date);
+					}
 				}
 			}
 		}
 		if(Integer.parseInt(secondLine.replaceAll("-", "")) < Integer.parseInt(aYearAgo.replaceAll("-", ""))) {
-			if(input.matches("[0-9]{10}") || input.matches("[a-öA-Ö]*") || input.matches("*\\s*[a-öA-Ö]*")) {
-				System.out.println(firstLine + "\nMedlem utan aktivt medlemskap!");
-				filled = true;
+			if(input.equals(person[0]) || input.equalsIgnoreCase(person[1].trim())){
+				if(input.matches("[0-9]{10}") || input.matches("[a-öA-Ö]*") || input.matches("[a-öA-Ö]*\\s*[a-öA-Ö]*")) {
+					
+					filled = true;
+					System.out.println(person[0] + "," + person[1] + "\nMedlem utan aktivt medlemskap!");
+				}
 			}
 		}
 	}
