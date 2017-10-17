@@ -26,6 +26,14 @@ public class BestGymEver {
 		Boolean filled = false;
 		String[] person;
 		
+		if (input == null) {
+			System.exit(0);
+		}
+		else if(input.equals("")) {
+			System.out.println("Fel format!");
+			System.exit(0);
+		}
+		
 		try (PrintWriter printRecentActivity = new PrintWriter(new BufferedWriter
 				(new FileWriter("src\\objektorienteringUppgift2\\MembersWithRecentActivity.txt", true)))){
 				Scanner readFile = new Scanner(infilsPath);
@@ -58,7 +66,8 @@ public class BestGymEver {
 			}
 		}
 	}
-		if (!filled) {
+		
+		if(!filled) {
 			System.out.println(input + "\nEj medlem!");
 		}
 		}catch(FileNotFoundException e) {
@@ -77,7 +86,6 @@ public class BestGymEver {
 			System.exit(0);
 	}
 }
-
 	
 	public static void main(String[] arg){
 		BestGymEver customer = new BestGymEver();
