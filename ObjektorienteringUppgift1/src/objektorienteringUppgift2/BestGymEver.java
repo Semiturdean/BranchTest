@@ -87,6 +87,6 @@ public class BestGymEver {
 }
 	
 	public static void main(String[] arg){
-		BestGymEver customer = new BestGymEver();
+		new BestGymEver();
 	}
 }
