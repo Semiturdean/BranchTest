@@ -19,10 +19,10 @@ public class BackendGame extends JFrame implements ActionListener {
 	public BackendGame() {
 		
 		//Framens location och övre panelen
-		setLocation(900, 500);
+		setLocation(900, 200);
 		setLayout(new BorderLayout());
 		add(gamePanel, BorderLayout.NORTH);
-		
+		//heeeeej
 		//nedre panelen
 		add(knappPanel, BorderLayout.SOUTH);
 		knappPanel.add(nyttSpel);
@@ -31,7 +31,8 @@ public class BackendGame extends JFrame implements ActionListener {
 		//almänna villkor
 		setVisible(true);
 		setDefaultCloseOperation(3);
-		pack();
+		setSize(600,600);
+		
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
