@@ -22,7 +22,7 @@ public class BackendGame extends JFrame implements ActionListener {
 		setLocation(900, 200);
 		setLayout(new BorderLayout());
 		add(gamePanel, BorderLayout.NORTH);
-		//heeeeej
+		
 		//nedre panelen
 		add(knappPanel, BorderLayout.SOUTH);
 		knappPanel.add(nyttSpel);
